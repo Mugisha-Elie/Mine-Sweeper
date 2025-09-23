@@ -1,1 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Magra:wght@400;700&display=swap');
 @import "tailwindcss";
+
+
+@theme {
+    --font-luckiest: "Luckiest Guy", Arial, Helvetica, sans-serif;
+    --font-Magra: "Magra", Arial, sans-serif;
+}

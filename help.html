@@ -8,7 +8,7 @@
   <script src="/src/main.js" defer></script>
   <link rel="stylesheet" href="./src/style.css">
 </head>
-<body class="bg-[#1C1B1F] font-luckiest text-white">
+<body class="bg-[#1C1B1F] font-luckiest text-white flex flex-col h-screen">
 
     <header class="mx-10 mt-7 flex justify-between gap-1 md:justify-around items-center">
       <!-- Logo & title -->
@@ -21,7 +21,7 @@
         
         <ul class="hidden md:flex gap-5 items-center">
           <li><button class="cursor-pointer hover:underline">New Game</button></li>
-          <li class="cursor-pointer hover:underline"><a href="help.html">Help</a></li>
+          <li class="cursor-pointer hover:underline"><a href="index.html">Home</a></li>
         </ul>
 
         <div id="color-button" class="relative cursor-pointer">
@@ -56,6 +56,28 @@
       </div>
     </header>
 
-    <div id="grid-container" class="grid grid-cols-10"></div>
+    <section class="flex-1 flex flex-col justify-center md:justify-start md:mt-25 lg:mt-15 items-center">
+        <div class="bg-[#A4A2F2] p-3 rounded-2xl text-gray-700 space-y-4 md:space-y-5 -mt-5 w-[90%] md:w-[70%] md:text-2xl">
+            <div class="text-center">
+                <p class="md:text-4xl">Welcome to Mine Sweeper</p>
+                <p>Rules to follow:</p>
+            </div>
+            
+            <div class="text-center text-3xl font-Magra space-y-3 md:space-y-5">
+                <p>Reveal as many boxes as you can</p>
+                <p>Every revealed box has a count label of possible land mines surrounding it</p>
+                <p>If you think a box is a land mine, flag it instead of revealing it</p>
+                <p>If you reveal a land mine, Game Over</p>
+                <p>You can use the flag and reveal button on the bottom of the screen</p>
+                <p>You can also left click to reveal and right click to flag</p>
+            </div>
+            
+        </div>
+
+        <ul class="flex md:hidden gap-5 items-center mt-10">
+            <li><button class="cursor-pointer hover:underline">New Game</button></li>
+            <li class="cursor-pointer hover:underline"><a href="index.html">Home</a></li>
+        </ul>
+    </section>
 </body>
 </html>
