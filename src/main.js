@@ -66,8 +66,33 @@ for(let row = 0; row < grid.length; row++){
         const cellDiv = document.createElement("div");
         cellDiv.setAttribute("data-row", row);
         cellDiv.setAttribute("data-col", col);
-        cellDiv.classList.add("bg-[#A4A2F2]", "aspect-square");
+        cellDiv.classList.add("bg-[#A4A2F2]", "aspect-square", "cursor-pointer", "border", "flex", "justify-center", "items-center");
 
         gridContainer.appendChild(cellDiv);
     }
 }
+
+
+gridContainer.addEventListener("click", (event)=>{
+    const cellDiv = event.target;
+    if(!cellDiv.hasAttribute("data-row")) return;
+
+    const row = parseInt(cellDiv.getAttribute("data-row"));
+    const col = parseInt(cellDiv.getAttribute("data-col"));
+    const cell = grid[row][col];
+
+    let neighbourMineCount = countMines(row, col);
+
+    if(cell.isMine){
+        cellDiv.classList.remove("bg-[#A4A2F2]");
+        cellDiv.classList.add("bg-red-500");
+        cell.isRevealed = true;
+        return;
+    }
+    if(neighbourMineCount > 0){
+        cellDiv.textContent = neighbourMineCount; 
+        cellDiv.classList.remove("bg-[#A4A2F2]");
+        cell.isRevealed = true;
+    }
+});
+
